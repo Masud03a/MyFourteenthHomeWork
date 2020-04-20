@@ -84,6 +84,21 @@ namespace Task_14
                     operators.Add(operatorChr);
                 }
             }
+
+             if(cmd == "Conclusion")
+            {
+                Console.WriteLine($"\n{new string('-', 35)}\n");
+                if(operands != null)
+                {
+                    for(int i = 0; i < operands.Count - 1; i++)
+                    {
+                        string[] opers = operands[i].Split('|'); 
+                        double A = double.Parse(opers[0].Replace('.', ',')); 
+                        double B = double.Parse(opers[1].Replace('.', ',')); 
+                        Console.WriteLine($"{A} {operators[i]} {B} = {operations[i](A, B)}"); // Вывод данных в консоль
+                    }
+                }
+            }
         }
     }
 }
